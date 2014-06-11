@@ -1,0 +1,308 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Programming/Coding Assignment
+% LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+% Original author:
+% Ted Pavlic (http://www.tedpavlic.com)
+%
+% Note:
+% The \lipsum[#] commands throughout this template generate dummy text
+% to fill the template out. These commands should all be removed when 
+% writing assignment content.
+%
+% This template uses a C++ script as an example snippet of code, most other
+% languages are also usable. Configure them in the "CODE INCLUSION 
+% CONFIGURATION" section.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%   PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage[usenames,dvipsnames]{color} % Required for custom colors
+\usepackage{graphicx} % Required to insert images
+\usepackage{listings} % Required for insertion of code
+\usepackage{courier} % Required for the courier font
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{fontspec}
+\usepackage{amsmath}
+\setromanfont{FZLTXHK--GBK1-0} % 儷黑Pro
+\setmonofont{Menlo} % 等寬字型
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1} % Line spacing
+
+% Set up the header and footer
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName} % Top left header
+\chead{\hmwkClass\ (\hmwkClassInstructor\ \hmwkClassTime): \hmwkTitle} % Top center head
+\rhead{\firstxmark} % Top right header
+\lfoot{\lastxmark} % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{Page\ \thepage\ of\ \protect\pageref{LastPage}} % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+%----------------------------------------------------------------------------------------
+%   CODE INCLUSION CONFIGURATION
+%----------------------------------------------------------------------------------------
+
+\definecolor{MyDarkGreen}{rgb}{0.0,0.4,0.0} % This is the color used for comments
+\lstloadlanguages{C++} % Load C++ syntax for listings, for a list of other languages supported see: ftp://ftp.tex.ac.uk/tex-archive/macros/latex/contrib/listings/listings.pdf
+\lstset{language=C++, % Use C++ in this example
+        frame=single, % Single frame around code
+        basicstyle=\small\ttfamily, % Use small true type font
+        keywordstyle=[1]\color{Blue}\bf, % C++ functions bold and blue
+        keywordstyle=[2]\color{Purple}, % C++ function arguments purple
+        keywordstyle=[3]\color{Blue}\underbar, % Custom functions underlined and blue
+        identifierstyle=, % Nothing special abou t identifiers                                         
+        commentstyle=\usefont{T1}{pcr}{m}{sl}\color{MyDarkGreen}\small, % Comments small dark green courier font
+        stringstyle=\color{Purple}, % Strings are purple
+        showstringspaces=false, % Don't put marks in string spaces
+        tabsize=5, % 5 spaces per tab
+        %
+        % Put standard C++ functions not included in the default language here
+        morekeywords={rand},
+        %
+        % Put C++ function parameters here
+        morekeywords=[2]{on, off, interp},
+        %
+        % Put user defined functions here
+        morekeywords=[3]{test},
+        %
+        morecomment=[l][\color{Blue}]{...}, % Line continuation (...) like blue comment
+        numbers=left, % Line numbers on left
+        firstnumber=1, % Line numbers start with line 1
+        numberstyle=\tiny\color{Blue}, % Line numbers are blue and small
+        stepnumber=5 % Line numbers go in steps of 5
+}
+
+% Creates a new command to include a perl script, the first parameter is the filename of the script (without .pl), the second parameter is the caption
+\newcommand{\cppscript}[2]{
+\begin{itemize}
+\item[]\lstinputlisting[caption=#2,label=#1]{#1.cpp}
+\end{itemize}
+}
+\lstloadlanguages{Python} % Load Python syntax for listings, for a list of other languages supported see: ftp://ftp.tex.ac.uk/tex-archive/macros/latex/contrib/listings/listings.pdf
+\lstset{language=Python, % Use Python in this example
+        frame=single, % Single frame around code
+        basicstyle=\small\ttfamily, % Use small true type font
+        keywordstyle=[1]\color{Blue}\bf, % Python functions bold and blue
+        keywordstyle=[2]\color{Purple}, % Python function arguments purple
+        keywordstyle=[3]\color{Blue}\underbar, % Custom functions underlined and blue
+        identifierstyle=, % Nothing special about identifiers                                         
+        commentstyle=\usefont{T1}{pcr}{m}{sl}\color{MyDarkGreen}\small, % Comments small dark green courier font
+        stringstyle=\color{Purple}, % Strings are purple
+        showstringspaces=false, % Don't put marks in string spaces
+        tabsize=5, % 5 spaces per tab
+        %
+        % Put standard Python functions not included in the default language here
+        morekeywords={rand},
+        %
+        % Put Python function parameters here
+        morekeywords=[2]{on, off, interp},
+        %
+        % Put user defined functions here
+        morekeywords=[3]{test},
+        %
+        morecomment=[l][\color{Blue}]{...}, % Line continuation (...) like blue comment
+        numbers=left, % Line numbers on left
+        firstnumber=1, % Line numbers start with line 1
+        numberstyle=\tiny\color{Blue}, % Line numbers are blue and small
+        stepnumber=5 % Line numbers go in steps of 5
+}
+
+% Creates a new command to include a perl script, the first parameter is the filename of the script (without .pl), the second parameter is the caption
+\newcommand{\pyscript}[2]{
+\begin{itemize}
+\item[]\lstinputlisting[caption=#2,label=#1]{#1.py}
+\end{itemize}
+}
+
+
+%----------------------------------------------------------------------------------------
+%   DOCUMENT STRUCTURE COMMANDS
+%   Skip this unless you know what you're doing
+%----------------------------------------------------------------------------------------
+
+% Header and footer for when a page split occurs within a problem environment
+\newcommand{\enterProblemHeader}[1]{
+\nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+}
+
+% Header and footer for when a page split occurs between problem environments
+\newcommand{\exitProblemHeader}[1]{
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1}{}\nobreak
+}
+
+\setcounter{secnumdepth}{0} % Removes default section numbers
+\newcounter{homeworkProblemCounter} % Creates a counter to keep track of the number of problems
+
+\newcommand{\homeworkProblemName}{}
+\newenvironment{homeworkProblem}[1][Problem \arabic{homeworkProblemCounter}]{ % Makes a new environment called homeworkProblem which takes 1 argument (custom name) but the default is "Problem #"
+\stepcounter{homeworkProblemCounter} % Increase counter for number of problems
+\renewcommand{\homeworkProblemName}{#1} % Assign \homeworkProblemName the name of the problem
+\section{\homeworkProblemName} % Make a section in the document with the custom problem count
+\enterProblemHeader{\homeworkProblemName} % Header and footer within the environment
+}{
+\exitProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+
+\newcommand{\problemAnswer}[1]{ % Defines the problem answer command with the content as the only argument
+\noindent\framebox[\columnwidth][c]{\begin{minipage}{0.98\columnwidth}#1\end{minipage}} % Makes the box around the problem answer and puts the content inside
+}
+
+\newcommand{\homeworkSectionName}{}
+\newenvironment{homeworkSection}[1]{ % New environment for sections within homework problems, takes 1 argument - the name of the section
+\renewcommand{\homeworkSectionName}{#1} % Assign \homeworkSectionName to the name of the section from the environment argument
+\subsection{\homeworkSectionName} % Make a subsection with the custom name of the subsection
+\enterProblemHeader{\homeworkProblemName\ [\homeworkSectionName]} % Header and footer within the environment
+}{
+\enterProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+
+%----------------------------------------------------------------------------------------
+%   NAME AND CLASS SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\hmwkTitle}{} % Assignment title
+\newcommand{\hmwkDueDate}{} % Due date
+\newcommand{\hmwkClass}{} % Course/class
+\newcommand{\hmwkClassTime}{} % Class/lecture time
+\newcommand{\hmwkClassInstructor}{} % Teacher/lecturer
+\newcommand{\hmwkAuthorName}{} % Your name
+
+%----------------------------------------------------------------------------------------
+%   TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{
+\textbf{实验 \#3\\ 
+曲线拟合的最小二乘法}
+}
+
+\author{刘扬 2011012162}
+\date{} % Insert date here if you want it to appear below your name
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle
+\section{实验目标}
+通过使用最小二乘法对给出的两组数据进行曲线的拟合，其中曲线已经提前给出。
+\section{实验原理}
+对于一个函数$f$,我们的任务是求出一个g，其中$g\in\phi$,使得$\sum{e_i^2}$最小,其中$e_i = |f(x_i) - g(x_i)|$,\\$\phi = span\{\phi_0,\phi_2...\phi_n\}$,于是我们得到了下面的推导过程：\\
+设
+$g = \sum{a_i\phi_i}$,
+\begin{align}
+E = & \sum_{i=0}^{m}{(f(x_i)-g(x_i))^2} \\
+  = & \sum_{i=0}^{m}{(f(x_i)-\sum_{k=0}^{n}{a_k\phi_k(x_i)})^2}
+\end{align}
+求偏导数，得：
+\begin{align}
+\frac{\partial{E}}{\partial{a_k}} = 2\sum_{i=0}^{m}[\sum_{j=0}^{n}{a_j\phi_j(x_i)} - f(x_i)]\phi_k({x_i})
+\end{align}
+所以有下面方程成立：
+$$
+\left(                 
+  \begin{array}{cccc}   
+   (\phi_0,\phi_0) & (\phi_0,\phi_1) & \cdots & (\phi_0,\phi_n)\\
+   (\phi_1,\phi_0) & (\phi_1,\phi_1) & \cdots & (\phi_1,\phi_n)\\
+   \vdots         &\vdots&\ddots&\vdots\\
+   (\phi_n,\phi_0) & (\phi_n,\phi_1) & \cdots & (\phi_n,\phi_n)
+  \end{array}
+\right)                
+\left(
+\begin{array}{c}
+a_0\\
+a_1\\
+\vdots\\
+a_n\\
+\end{array}
+\right)
+=\left(
+\begin{array}{c}
+(f,\phi_0)\\
+(f,\phi_1)\\
+\vdots\\
+(f,\phi_n)\\
+\end{array}
+\right)
+$$
+其中我们定义$(\phi_j,\phi_k) = \sum_{i=0}^{m}\phi_j(x_i)\phi_k(x_i)$
+关于这个方程有解的条件是(左面的矩阵可逆)：
+
+\begin{itemize}
+\item 1.$\phi_0(x)...\phi_n(x)$在[a,b]上线性无关
+\item 2.$\{\phi_0{x}...\phi_n(x)\}$的线性组合中的任何一个函数在$\{x_0...x_m\}$中至多有n个不同的零点
+\end{itemize}
+
+\section{算法设计与实现}
+对于具体的问题，我们发现$\phi_i(x) = x^i$,然后根据上面求解的原理使用python实现了OLS函数，\\给入两个数据的列表，同时给出拟合函数的最高阶，求出拟合的系数值。\\
+具体在实现OLS函数的过程中调用了写好的equation.solve函数，这个函数的作用是使用高斯消元法解方程。\\
+\section{实验结果}
+通过运行程序我得到的拟合函数是\\$g(x) = -27.1212121212 +  48.8872053872x   -0.511111111111x^2    +    0.00713804713805x^3 $\\
+
+每一项的估计值，实际值和误差的结果为：
+
+\begin{table}[!hbp]
+\begin{tabular}{|c|c|c|}
+\hline
+估计值&实际值&误差\\
+\hline
+803.282828283           & 805           & 1.71717171717 \\
+\hline
+987.146464646           & 985           & 2.14646464646 \\
+\hline
+1172.22222222           & 1170          & 2.22222222222 \\
+\hline
+1363.86363636           & 1365          & 1.13636363636 \\
+\hline
+1567.42424242           & 1570          & 2.57575757576 \\
+\hline
+1788.25757576           & 1790          & 1.74242424242 \\
+\hline
+2031.71717172           & 2030          & 1.71717171717 \\
+\hline
+2303.15656566           & 2300          & 3.15656565657 \\
+\hline
+2607.92929293           & 2610          & 2.07070707071 \\
+\hline
+\end{tabular}
+\caption{实验结果}
+\end{table}
+总的误差的平方和$\sum_{i=0}^{m}{e_i^2}=40.6565656566$\\
+散点图和曲线拟合图为:\\
+\includegraphics[width=0.75\columnwidth]{graph.png} % Examp
+\section{讨论与反思}
+使用曲线拟合的方法我们可以方便地对一种数据进行拟合，拟合出我们想要的模型，这种思想有着很大空间的应用。\\
+比如在机器学习领域中我们的核心问题是对于给定的x,y在训练集合上如何拟合得到的结果最为精确。\\
+尽管上面的方法能够保证求得的解为最好解，但是它的局限性还是有的：\begin{itemize}
+\item 它的拟合函数必须是给定的一族函数的线性表示
+\item 它运算的时间复杂度比较高
+\end{itemize}
+\section{附:实验代码}
+\pyscript{exp3}{曲线拟合代码}
+\pyscript{equation}{高斯消元代码}
+\end{document}
