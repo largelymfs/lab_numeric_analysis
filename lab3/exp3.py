@@ -49,10 +49,14 @@ if __name__=="__main__":
 	for i in range(len(a)):
 		print a[i],"\t",
 	print
-	print "Estimation\t Actual Value"
+	print "Estimation\t\t Actual Value\t\t ERROR"
+	sum = 0.0
 	for i in range(len(y)):
-		print f[i],"\t",y[i]
-	plt.plot(x, y,'r',label="x-y")
+		print f[i],"\t\t",y[i],"\t\t",abs(f[i]-y[i])
+		sum += abs(f[i]-y[i])**2
+	print "TOTAL ERROR : ",sum
+
+	plt.plot(x, y,'r.',label="x-y")
 	plt.plot(x, f, 'g',label="x-f")
 	plt.legend()
 	plt.show()
