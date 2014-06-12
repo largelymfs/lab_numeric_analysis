@@ -25,6 +25,8 @@ if __name__=="__main__":
 	f2 = 4.0 * gauss(0, 1, h, f_2)
 	y2 = math.pi
 	print "=============GAUSS============="
-	print "For Problem 1, we have : ", f1, ",answer is : ", y1, ",delta is ", abs(y1 - f1)
-	print "For Problem 1, we have : ", f2, ",answer is : ", y2, ",delta is ", abs(y2 - f2)
+	print "For Problem 1, we have : ", f1, ",answer is : ", y1
+	print  "delta is ", abs(y1 - f1)
+	print "For Problem 1, we have : ", f2, ",answer is : ", y2 
+	print "delta is ", abs(y2 - f2)
 	

@@ -46,7 +46,9 @@ if __name__=="__main__":
 	t1 = abs(y1 - f1)
 	t2 = abs(y2 - f2)
 	print "=============ROMBERG============="
-	print "For Problem 1, we have : ", f1, ",answer is : ", y1, ",delta is ", t1
-	print "For Problem 1, we have : ", f2, ",answer is : ", y2, ",delta is ", t2
+	print "For Problem 1, we have : ", f1, ",answer is : ", y1
+	print "delta is ", t1
+	print "For Problem 1, we have : ", f2, ",answer is : ", y2 
+	print "delta is ", t2
 	
 			

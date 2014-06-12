@@ -27,6 +27,8 @@ if __name__=="__main__":
 	y1 = math.log(2)
 	y2 = math.pi
 	print "=============SIMPSON============="
-	print "For Problem 1, we have : ", f1, ",answer is : ", y1, ",delta is ", abs(y1 - f1)
-	print "For Problem 1, we have : ", f2, ",answer is : ", y2, ",delta is ", abs(y2 - f2)
+	print "For Problem 1, we have : ", f1, ",answer is : ", y1
+	print  "delta is ", abs(y1 - f1)
+	print "For Problem 1, we have : ", f2, ",answer is : ", y2 
+	print "delta is ", abs(y2 - f2)
 	
